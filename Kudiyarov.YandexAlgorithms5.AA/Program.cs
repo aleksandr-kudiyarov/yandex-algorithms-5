@@ -11,24 +11,24 @@ public static class Program
         var solution = Solution(input);
         File.WriteAllText("output.txt", solution);
     }
-    
+
     public static string Solution(string[] input)
     {
         var (vasya, masha) = GetInputParams(input);
 
         var res = 0;
-        
+
         if (IsIntersect(vasya, masha))
         {
             var max = Math.Max(vasya.Max, masha.Max);
-            var min = Math.Min(vasya.Min, masha.Min); 
+            var min = Math.Min(vasya.Min, masha.Min);
             res = max - min + 1;
         }
         else
         {
             res = (vasya.Max - vasya.Min + 1) + (masha.Max - masha.Min + 1);
         }
-        
+
         return res.ToString();
     }
 
@@ -39,17 +39,17 @@ public static class Program
 
         var vasya = GetInputParam(vasyaLine);
         var masha = GetInputParam(mashaLine);
-        
+
         return (vasya, masha);
     }
 
     private static InputParam GetInputParam(string line)
     {
         var splitted = line.Split(" ");
-        
+
         var start = splitted[0];
         var distance = splitted[1];
-        
+
         var result = new InputParam
         {
             Start = int.Parse(start),

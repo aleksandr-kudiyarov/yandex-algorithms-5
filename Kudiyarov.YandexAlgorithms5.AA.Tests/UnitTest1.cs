@@ -5,21 +5,21 @@ namespace Kudiyarov.YandexAlgorithms5.AA.Tests;
 public class UnitTest1 : BaseUnitTest
 {
     private const string Input1 = """
-                                 0 7
-                                 12 5
+                                  0 7
+                                  12 5
 
-                                 """;
-    
+                                  """;
+
     private const string Output1 = """
                                    25
-                                   
+
                                    """;
-    
+
     [Theory]
     [InlineData(Input1, Output1)]
     public void Test1(string input, string output)
     {
-        InnerTest(input, output); 
+        InnerTest(input, output);
     }
 
     protected override string GetActual(string input)

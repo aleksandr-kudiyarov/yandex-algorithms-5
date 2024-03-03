@@ -8,7 +8,7 @@ public abstract class BaseUnitTest
     {
         // act
         var actual = GetActual(input);
-        
+
         // assert
         Assert.Equal(output.Trim(), actual.Trim());
     }
