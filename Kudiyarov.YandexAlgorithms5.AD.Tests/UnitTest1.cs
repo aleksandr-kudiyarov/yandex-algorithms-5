@@ -13,12 +13,12 @@ public class UnitTest1 : BaseUnitTest
                                    ********
                                    ********
                                    ********
-                                   
+
                                    """;
 
     private const string Output01 = """
                                     49
-                                    
+
                                     """;
 
     private const string Input02 = """
@@ -30,12 +30,12 @@ public class UnitTest1 : BaseUnitTest
                                    ********
                                    ********
                                    ********
-                                   
+
                                    """;
 
     private const string Output02 = """
                                     54
-                                    
+
                                     """;
 
     private const string Input03 = """
@@ -47,12 +47,12 @@ public class UnitTest1 : BaseUnitTest
                                    ********
                                    ********
                                    ********
-                                   
+
                                    """;
 
     private const string Output03 = """
                                     40
-                                    
+
                                     """;
 
     [Theory]
