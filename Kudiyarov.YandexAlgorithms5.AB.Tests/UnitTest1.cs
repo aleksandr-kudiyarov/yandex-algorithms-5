@@ -88,6 +88,8 @@ public class UnitTest1 : BaseUnitTest
         InnerTest(input, output);
     }
 
+    protected override TimeSpan Timeout => TimeSpan.FromSeconds(2);
+
     protected override string GetActual(string input)
     {
         var arr = input.Split(Environment.NewLine);

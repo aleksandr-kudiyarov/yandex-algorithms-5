@@ -43,6 +43,8 @@ public class UnitTest1 : BaseUnitTest
         InnerTest(input, output);
     }
 
+    protected override TimeSpan Timeout => TimeSpan.FromSeconds(1);
+
     protected override string GetActual(string input)
     {
         return Program.Solution(input);
