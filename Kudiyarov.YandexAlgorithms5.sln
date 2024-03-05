@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudiyarov.YandexAlgorithms5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudiyarov.YandexAlgorithms5.AE.Tests", "Kudiyarov.YandexAlgorithms5.AE.Tests\Kudiyarov.YandexAlgorithms5.AE.Tests.csproj", "{C9903D37-2D2F-4D27-83D7-65FB57482DBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudiyarov.YandexAlgorithms5.AF", "Kudiyarov.YandexAlgorithms5.AF\Kudiyarov.YandexAlgorithms5.AF.csproj", "{59D4AE7C-21AB-4EE4-9BE6-FAE17D95E724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudiyarov.YandexAlgorithms5.AF.Tests", "Kudiyarov.YandexAlgorithms5.AF.Tests\Kudiyarov.YandexAlgorithms5.AF.Tests.csproj", "{87C3C163-60AD-4A50-8A5B-0404584F409E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +64,13 @@ Global
 		{C9903D37-2D2F-4D27-83D7-65FB57482DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9903D37-2D2F-4D27-83D7-65FB57482DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9903D37-2D2F-4D27-83D7-65FB57482DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D4AE7C-21AB-4EE4-9BE6-FAE17D95E724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D4AE7C-21AB-4EE4-9BE6-FAE17D95E724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D4AE7C-21AB-4EE4-9BE6-FAE17D95E724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D4AE7C-21AB-4EE4-9BE6-FAE17D95E724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C3C163-60AD-4A50-8A5B-0404584F409E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C3C163-60AD-4A50-8A5B-0404584F409E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C3C163-60AD-4A50-8A5B-0404584F409E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C3C163-60AD-4A50-8A5B-0404584F409E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
