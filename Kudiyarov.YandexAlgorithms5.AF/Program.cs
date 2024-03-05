@@ -34,7 +34,7 @@ public static class Program
             var innerL = result[r - 1];
             var innerR = result[r];
 
-            var sign = !innerL.IsEven() && !innerR.IsEven()
+            var sign = innerL.IsOdd() && innerR.IsOdd()
                 ? 'x'
                 : '+';
 
@@ -49,5 +49,5 @@ public static class Program
 
 public static class IntHelper
 {
-    public static bool IsEven(this long number) => number % 2 == 0;
+    public static bool IsOdd(this long number) => number % 2 != 0;
 }
