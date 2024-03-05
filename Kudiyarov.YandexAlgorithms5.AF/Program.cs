@@ -17,8 +17,7 @@ public static class Program
     public static string Solution(IEnumerable<string> input)
     {
         var result = input
-            .Skip(1)
-            .First()
+            .ElementAt(1)
             .Split(' ')
             .Select(n => long.Parse(n))
             .ToList();
