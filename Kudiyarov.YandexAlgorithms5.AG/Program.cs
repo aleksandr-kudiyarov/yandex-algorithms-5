@@ -33,19 +33,28 @@ public static class Program
 
         try
         {
+            CheckConditions(stats);
             var round = 0;
-            
+
             while (stats.BarrackHp > 0 || stats.EnemySoldiers > 0)
             {
                 round++;
                 Round(stats);
             }
-            
+
             return round.ToString();
         }
         catch (LoseException ex)
         {
             return "-1";
+        }
+    }
+
+    private static void CheckConditions(GameState stats)
+    {
+        if (stats.BarrackHp >= stats.MySoldiers * 2 && stats.EnemySoldiersPerMove >= stats.MySoldiers)
+        {
+            throw new LoseException();
         }
     }
 
@@ -59,7 +68,7 @@ public static class Program
     {
         var freeSoldiers = state.MySoldiers;
 
-        if (CanDestroyBarrack(state.BarrackHp, state.MySoldiers))
+        if (CanDestroyBarrack(state) && CanKillAllSoldiers(state))
         {
             freeSoldiers -= state.BarrackHp;
             state.BarrackHp = 0;
@@ -74,9 +83,42 @@ public static class Program
         state.BarrackHp = Math.Max(0, state.BarrackHp - freeSoldiers);
     }
 
-    private static bool CanDestroyBarrack(int barrackHp, int soldiers)
+    private static bool CanDestroyBarrack(GameState state)
     {
-        return barrackHp > 0 && soldiers >= barrackHp;
+        var result = state.BarrackHp > 0 && state.MySoldiers >= state.BarrackHp;
+        return result;
+    }
+    
+    private static bool CanKillAllSoldiers(GameState state)
+    {
+        // my move
+        var freeSoldiers = state.MySoldiers - state.BarrackHp;
+        var enemySoldiers = state.EnemySoldiers - freeSoldiers;
+
+        // enemy move
+        var mySoldiers = state.MySoldiers - enemySoldiers;
+        var result = CanKill(mySoldiers, enemySoldiers);
+        
+        return result;
+    }
+
+    private static bool CanKill(int mySoldiers, int enemySoldiers)
+    {
+        while (true)
+        {
+            if (mySoldiers <= 0)
+            {
+                return false;
+            }
+
+            if (enemySoldiers <= 0)
+            {
+                return true;
+            }
+
+            enemySoldiers = Math.Max(0, enemySoldiers - mySoldiers);
+            mySoldiers = Math.Max(0, mySoldiers - enemySoldiers);
+        }
     }
 
     private static void EnemyMove(GameState state)
@@ -112,7 +154,4 @@ public class GameState
     public int BarrackHp { get; set; }
 }
 
-public sealed class LoseException : Exception
-{
-    
-}
+public sealed class LoseException : Exception { }
