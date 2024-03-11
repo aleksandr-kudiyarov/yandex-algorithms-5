@@ -83,6 +83,22 @@ public static class Program
         state.BarrackHp = Math.Max(0, state.BarrackHp - freeSoldiers);
     }
 
+    private static int GetMinSoldiersToKill(int enemySoldiers)
+    {
+        var range = Enumerable
+            .Range(0, enemySoldiers);
+
+        foreach (var mySoldiers in range)
+        {
+            if (CanKill(mySoldiers, enemySoldiers))
+            {
+                return mySoldiers;
+            }
+        }
+
+        return 0;
+    }
+
     private static bool CanDestroyBarrack(GameState state)
     {
         var result = state.BarrackHp > 0 && state.MySoldiers >= state.BarrackHp;

@@ -75,6 +75,18 @@ public class UnitTest1 : BaseUnitTest
                                     5
                                     
                                     """;
+    
+    private const string Input13 = """
+                                   250
+                                   500
+                                   218
+                                   
+                                   """;
+    
+    private const string Output13 = """
+                                    5
+
+                                    """;
 
     [Theory]
     [InlineData(Input01, Output01)]
@@ -83,6 +95,7 @@ public class UnitTest1 : BaseUnitTest
     [InlineData(Input04, Output04)]
     [InlineData(Input09, Output09)]
     [InlineData(Input11, Output11)]
+    [InlineData(Input13, Output13)]
     public void Test1(string input, string output)
     {
         InnerTest(input, output);
